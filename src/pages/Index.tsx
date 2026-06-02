@@ -4,6 +4,31 @@ const HERO_IMAGE = "https://cdn.poehali.dev/projects/9bf7c9ec-7d4c-49a6-bcc6-4a2
 const VALUES_IMAGE = "https://cdn.poehali.dev/projects/9bf7c9ec-7d4c-49a6-bcc6-4a2c4b2b8e89/files/67b13929-952b-4450-a2ec-c0579bd609e7.jpg";
 const VK_LINK = "https://vk.com/club235557781";
 
+const services = [
+  { num: "01", title: "Прорыв", sub: "Активация ресурсов", icon: "Zap" },
+  { num: "02", title: "Я‑женщина", sub: "Открытие женской энергии", icon: "Sparkles" },
+  { num: "03", title: "Поиск и раскрытие предназначения", sub: "Путь к своему смыслу и призванию", icon: "Compass" },
+  { num: "04", title: "Деньги", sub: "Вхождение в поток материальных ресурсов", icon: "TrendingUp" },
+  { num: "05", title: "Баланс и восстановление", sub: "Собери себя по кусочкам", icon: "RefreshCw" },
+  { num: "06", title: "Моя тень", sub: "Подружись со своей теневой стороной", icon: "Moon" },
+  {
+    num: "07",
+    title: "Тематические бани",
+    sub: "Ритуальные женские бани для разных жизненных этапов",
+    icon: "Flame",
+    children: [
+      "Баня именинницы",
+      "Баня невесты",
+      "Баня закрытие родов",
+      "Баня закрытие травм после замершей беременности, выкидышей и абортов",
+      "Женская баня для здоровья и красоты",
+      "Релакс‑бани",
+    ],
+  },
+  { num: "08", title: "Арт‑терапия", sub: "Женские посиделки и рукоделие, групповая и индивидуальная проработка", icon: "Palette" },
+  { num: "09", title: "Кризисный психолог", sub: "Услуги психолога", icon: "Brain" },
+];
+
 const values = [
   {
     icon: "Heart",
@@ -40,6 +65,9 @@ const Index = () => {
           <div className="hidden md:flex items-center gap-8">
             <a href="#about" className="font-body text-sm tracking-wide transition-opacity hover:opacity-100" style={{ color: 'var(--laza-dark)', opacity: 0.65 }}>
               О нас
+            </a>
+            <a href="#services" className="font-body text-sm tracking-wide transition-opacity hover:opacity-100" style={{ color: 'var(--laza-dark)', opacity: 0.65 }}>
+              Услуги
             </a>
             <a href="#values" className="font-body text-sm tracking-wide transition-opacity hover:opacity-100" style={{ color: 'var(--laza-dark)', opacity: 0.65 }}>
               Направления
@@ -169,8 +197,71 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Services */}
+      <section id="services" className="py-24 md:py-32" style={{ backgroundColor: 'var(--laza-sand)' }}>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-16">
+            <p className="font-body text-xs tracking-[0.3em] uppercase mb-4" style={{ color: 'var(--laza-terracotta)', opacity: 0.85 }}>
+              Наши услуги
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl font-light mb-4" style={{ color: 'var(--laza-dark)' }}>
+              Практики для тела, души и ресурса
+            </h2>
+            <p className="font-body text-base max-w-xl" style={{ color: 'var(--laza-dark)', opacity: 0.65 }}>
+              Выберите направление, которое откликается сейчас — от энергии и предназначения до тематических бань и поддержки психолога.
+            </p>
+          </div>
+
+          <div className="flex flex-col divide-y" style={{ borderColor: 'var(--laza-sand)', border: '1px solid var(--laza-brown)', borderOpacity: 0.15, borderRadius: '1.5rem', overflow: 'hidden' }}>
+            {services.map((s, i) => (
+              <div
+                key={i}
+                className="group flex flex-col md:flex-row md:items-start gap-4 md:gap-8 px-8 py-7 transition-colors"
+                style={{ backgroundColor: i % 2 === 0 ? 'var(--laza-cream)' : 'rgba(247,243,238,0.6)' }}
+              >
+                <span className="font-display text-3xl font-light shrink-0 w-12" style={{ color: 'var(--laza-terracotta)', opacity: 0.5 }}>
+                  {s.num}
+                </span>
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-1">
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: 'var(--laza-sage)', color: 'var(--laza-cream)' }}>
+                      <Icon name={s.icon} size={15} fallback="Star" />
+                    </div>
+                    <h3 className="font-display text-xl md:text-2xl font-medium" style={{ color: 'var(--laza-dark)' }}>
+                      {s.title}
+                    </h3>
+                  </div>
+                  <p className="font-body text-sm mt-2 ml-11" style={{ color: 'var(--laza-dark)', opacity: 0.62 }}>
+                    {s.sub}
+                  </p>
+                  {s.children && (
+                    <ul className="mt-4 ml-11 flex flex-col gap-2">
+                      {s.children.map((c, j) => (
+                        <li key={j} className="flex items-start gap-2">
+                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: 'var(--laza-sage-dark)' }} />
+                          <span className="font-body text-sm" style={{ color: 'var(--laza-dark)', opacity: 0.7 }}>{c}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+                <a
+                  href={VK_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 self-start md:self-center font-body text-xs px-4 py-2 rounded-full border transition-all opacity-0 group-hover:opacity-100"
+                  style={{ borderColor: 'var(--laza-terracotta)', color: 'var(--laza-terracotta)' }}
+                >
+                  Записаться
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Values */}
-      <section id="values" className="py-24" style={{ backgroundColor: 'var(--laza-sand)' }}>
+      <section id="values" className="py-24" style={{ backgroundColor: 'var(--laza-cream)' }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <p className="font-body text-xs tracking-[0.3em] uppercase mb-4" style={{ color: 'var(--laza-terracotta)', opacity: 0.85 }}>
