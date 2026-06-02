@@ -42,62 +42,64 @@ const Index = () => {
   return (
     <div className="relative" style={{ backgroundColor: 'var(--laza-cream)', color: 'var(--laza-dark)', minHeight: '100vh' }}>
 
-      {/* Лоза левая */}
-      <div className="hidden md:block fixed left-0 top-0 bottom-0 z-40 w-12 pointer-events-none overflow-hidden">
-        <svg width="48" height="100%" viewBox="0 0 48 1200" preserveAspectRatio="xMidYMin meet"
-          xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', top: 0, left: 0, width: '48px', height: '100%' }}>
+      {/* Лоза левая — абсолютная, скроллится со страницей, огромная */}
+      <div className="hidden md:block absolute left-0 top-0 w-24 pointer-events-none" style={{ height: '100%', zIndex: 1 }}>
+        <svg width="96" height="100%" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', width: '96px', height: '100%' }}>
           <defs>
-            <pattern id="vineL" x="0" y="0" width="48" height="120" patternUnits="userSpaceOnUse">
-              {/* Стебель */}
-              <path d="M24 0 Q18 20 24 40 Q30 60 24 80 Q18 100 24 120" stroke="#7A9468" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-              {/* Листик влево */}
-              <path d="M24 30 Q10 22 8 30 Q10 38 24 34 Z" fill="#A8B89A" opacity="0.7"/>
-              {/* Листик вправо */}
-              <path d="M24 70 Q38 62 40 70 Q38 78 24 74 Z" fill="#7A9468" opacity="0.6"/>
-              {/* Усик */}
-              <path d="M24 50 Q32 44 34 48 Q33 53 28 52" stroke="#A8B89A" strokeWidth="1" fill="none" strokeLinecap="round"/>
-              {/* Ягоды */}
-              <circle cx="14" cy="32" r="2.5" fill="#B8714A" opacity="0.45"/>
-              <circle cx="10" cy="36" r="2" fill="#B8714A" opacity="0.35"/>
+            <pattern id="vinePatL" x="0" y="0" width="96" height="300" patternUnits="userSpaceOnUse">
+              <path d="M48 0 Q28 40 48 80 Q68 120 48 160 Q28 200 48 240 Q68 280 48 300"
+                stroke="#7A9468" strokeWidth="3" fill="none" strokeLinecap="round"/>
+              <path d="M48 55 Q10 35 4 55 Q8 75 48 68 Z" fill="#A8B89A" opacity="0.55"/>
+              <path d="M48 155 Q86 135 92 155 Q88 175 48 168 Z" fill="#7A9468" opacity="0.5"/>
+              <path d="M48 100 Q80 80 88 92 Q84 108 62 104" stroke="#A8B89A" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+              <path d="M48 210 Q16 190 8 202 Q12 218 36 213" stroke="#A8B89A" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+              <path d="M48 250 Q18 232 12 250 Q16 268 48 262 Z" fill="#A8B89A" opacity="0.45"/>
+              <circle cx="12" cy="58" r="6" fill="#7A9468" opacity="0.35"/>
+              <circle cx="4" cy="68" r="5" fill="#7A9468" opacity="0.28"/>
+              <circle cx="18" cy="72" r="4.5" fill="#5a7a50" opacity="0.3"/>
+              <circle cx="88" cy="158" r="6" fill="#7A9468" opacity="0.35"/>
+              <circle cx="80" cy="168" r="5" fill="#5a7a50" opacity="0.28"/>
+              <circle cx="92" cy="172" r="4" fill="#7A9468" opacity="0.25"/>
             </pattern>
           </defs>
-          <rect width="48" height="100%" fill="url(#vineL)"/>
+          <rect width="96" height="100%" fill="url(#vinePatL)"/>
         </svg>
       </div>
 
-      {/* Лоза правая */}
-      <div className="hidden md:flex fixed right-0 top-0 bottom-0 z-40 w-12 flex-col overflow-hidden">
-        <div className="flex-1 overflow-hidden pointer-events-none">
-          <svg width="48" height="100%" viewBox="0 0 48 1200" preserveAspectRatio="xMidYMin meet"
-            xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', top: 0, right: 0, width: '48px', height: '100%' }}>
+      {/* Лоза правая — абсолютная, скроллится со страницей, огромная */}
+      <div className="hidden md:block absolute right-0 top-0 w-24" style={{ height: '100%', zIndex: 1 }}>
+        <div className="pointer-events-none" style={{ height: 'calc(100% - 80px)' }}>
+          <svg width="96" height="100%" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', width: '96px', height: '100%' }}>
             <defs>
-              <pattern id="vineR" x="0" y="0" width="48" height="120" patternUnits="userSpaceOnUse">
-                {/* Стебель */}
-                <path d="M24 0 Q30 20 24 40 Q18 60 24 80 Q30 100 24 120" stroke="#7A9468" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-                {/* Листик вправо */}
-                <path d="M24 30 Q38 22 40 30 Q38 38 24 34 Z" fill="#A8B89A" opacity="0.7"/>
-                {/* Листик влево */}
-                <path d="M24 70 Q10 62 8 70 Q10 78 24 74 Z" fill="#7A9468" opacity="0.6"/>
-                {/* Усик */}
-                <path d="M24 50 Q16 44 14 48 Q15 53 20 52" stroke="#A8B89A" strokeWidth="1" fill="none" strokeLinecap="round"/>
-                {/* Ягоды */}
-                <circle cx="34" cy="32" r="2.5" fill="#B8714A" opacity="0.45"/>
-                <circle cx="38" cy="36" r="2" fill="#B8714A" opacity="0.35"/>
+              <pattern id="vinePatR" x="0" y="0" width="96" height="300" patternUnits="userSpaceOnUse">
+                <path d="M48 0 Q68 40 48 80 Q28 120 48 160 Q68 200 48 240 Q28 280 48 300"
+                  stroke="#7A9468" strokeWidth="3" fill="none" strokeLinecap="round"/>
+                <path d="M48 55 Q86 35 92 55 Q88 75 48 68 Z" fill="#A8B89A" opacity="0.55"/>
+                <path d="M48 155 Q10 135 4 155 Q8 175 48 168 Z" fill="#7A9468" opacity="0.5"/>
+                <path d="M48 100 Q16 80 8 92 Q12 108 34 104" stroke="#A8B89A" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                <path d="M48 210 Q80 190 88 202 Q84 218 60 213" stroke="#A8B89A" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                <path d="M48 250 Q78 232 84 250 Q80 268 48 262 Z" fill="#A8B89A" opacity="0.45"/>
+                <circle cx="84" cy="58" r="6" fill="#7A9468" opacity="0.35"/>
+                <circle cx="92" cy="68" r="5" fill="#7A9468" opacity="0.28"/>
+                <circle cx="78" cy="72" r="4.5" fill="#5a7a50" opacity="0.3"/>
+                <circle cx="8" cy="158" r="6" fill="#7A9468" opacity="0.35"/>
+                <circle cx="16" cy="168" r="5" fill="#5a7a50" opacity="0.28"/>
+                <circle cx="4" cy="172" r="4" fill="#7A9468" opacity="0.25"/>
               </pattern>
             </defs>
-            <rect width="48" height="100%" fill="url(#vineR)"/>
+            <rect width="96" height="100%" fill="url(#vinePatR)"/>
           </svg>
         </div>
-        {/* Виноград-кнопка внизу */}
+        {/* Виноград-кнопка в самом конце лозы */}
         <a
           href={VK_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="shrink-0 flex items-center justify-center w-12 h-14 transition-transform hover:scale-110"
+          className="flex items-center justify-center w-16 h-16 mx-auto transition-transform hover:scale-110"
           title="Сообщество ВКонтакте"
-          style={{ backgroundColor: 'var(--laza-cream)' }}
+          style={{ zIndex: 2, position: 'relative' }}
         >
-          <img src={GRAPE_IMAGE} alt="Виноград" className="w-8 h-8 object-contain" />
+          <img src={GRAPE_IMAGE} alt="Виноград" className="w-14 h-14 object-contain drop-shadow-md" />
         </a>
       </div>
 
