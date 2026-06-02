@@ -42,37 +42,52 @@ const Index = () => {
   return (
     <div className="relative" style={{ backgroundColor: 'var(--laza-cream)', color: 'var(--laza-dark)', minHeight: '100vh' }}>
 
-      {/* Vertical ЛАЗА vine — full page height, absolute inside scroll */}
-      <div className="hidden md:block absolute top-0 right-0 w-10 z-30" style={{ minHeight: '100%', borderLeft: '1px solid var(--laza-sand)' }}>
-        {/* Repeating ЛАЗА text that fills the full height */}
-        <div className="flex flex-col items-center pt-24 pb-16 gap-0" style={{ minHeight: '100%' }}>
-          <div
-            className="font-display font-light select-none flex-1"
-            style={{
-              color: 'var(--laza-terracotta)',
-              opacity: 0.28,
-              fontSize: '11px',
-              writingMode: 'vertical-rl',
-              letterSpacing: '0.5em',
-              lineHeight: 1,
-              overflow: 'hidden',
-              whiteSpace: 'nowrap',
-              backgroundImage: 'repeating-linear-gradient(to bottom, transparent 0px, transparent 0px)',
-            }}
-          >
-            {'ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · '}
-          </div>
-          {/* Grape at the bottom */}
-          <a
-            href={VK_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-transform hover:scale-125 mt-3"
-            title="Сообщество ВКонтакте"
-          >
-            <img src={GRAPE_IMAGE} alt="Виноград" className="w-7 h-7 object-cover rounded-full" style={{ opacity: 0.75 }} />
-          </a>
-        </div>
+      {/* Лоза левая */}
+      <div className="hidden md:flex fixed left-0 top-0 bottom-0 z-40 w-8 flex-col items-center py-8 pointer-events-none"
+        style={{ borderRight: '1px solid var(--laza-sand)' }}>
+        <span className="font-display select-none font-light"
+          style={{
+            writingMode: 'vertical-rl',
+            transform: 'rotate(180deg)',
+            fontSize: '10px',
+            letterSpacing: '0.55em',
+            color: 'var(--laza-terracotta)',
+            opacity: 0.3,
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            height: '100%',
+          }}>
+          {'ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · '}
+        </span>
+      </div>
+
+      {/* Лоза правая */}
+      <div className="hidden md:flex fixed right-0 top-0 bottom-0 z-40 w-8 flex-col items-center py-8"
+        style={{ borderLeft: '1px solid var(--laza-sand)' }}>
+        <span className="font-display select-none font-light pointer-events-none"
+          style={{
+            writingMode: 'vertical-rl',
+            fontSize: '10px',
+            letterSpacing: '0.55em',
+            color: 'var(--laza-terracotta)',
+            opacity: 0.3,
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            flex: 1,
+            height: '100%',
+          }}>
+          {'ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · '}
+        </span>
+        {/* Виноград */}
+        <a
+          href={VK_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 shrink-0 transition-transform hover:scale-125"
+          title="Сообщество ВКонтакте"
+        >
+          <img src={GRAPE_IMAGE} alt="Виноград" className="w-6 h-6 object-cover rounded-full" style={{ opacity: 0.7 }} />
+        </a>
       </div>
 
       {/* Nav */}
