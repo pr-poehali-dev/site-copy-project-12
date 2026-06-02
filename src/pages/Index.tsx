@@ -36,9 +36,38 @@ const values = [
   { icon: "Palette", title: "Творчество", text: "Арт-терапия, женские посиделки и рукоделие — путь к выражению чувств и связи с собой и другими." },
 ];
 
+const GRAPE_IMAGE = "https://cdn.poehali.dev/projects/9bf7c9ec-7d4c-49a6-bcc6-4a2c4b2b8e89/files/43f891bf-6e84-4a84-9734-3cdc1c8b82c0.jpg";
+
 const Index = () => {
   return (
     <div style={{ backgroundColor: 'var(--laza-cream)', color: 'var(--laza-dark)', minHeight: '100vh' }}>
+
+      {/* Vertical ЛАЗА strip */}
+      <div className="hidden md:flex fixed right-0 top-0 bottom-0 z-40 flex-col items-center justify-between py-6 w-10"
+        style={{ borderLeft: '1px solid var(--laza-sand)' }}>
+        <div />
+        <span
+          className="font-display font-light tracking-[0.35em] select-none"
+          style={{
+            color: 'var(--laza-terracotta)',
+            opacity: 0.35,
+            fontSize: '11px',
+            writingMode: 'vertical-rl',
+            letterSpacing: '0.35em',
+          }}
+        >
+          ЛАЗА
+        </span>
+        <a
+          href={VK_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-transform hover:scale-110"
+          title="Сообщество ВКонтакте"
+        >
+          <img src={GRAPE_IMAGE} alt="Виноград" className="w-8 h-8 object-cover rounded-full" style={{ opacity: 0.7 }} />
+        </a>
+      </div>
 
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50" style={{ backgroundColor: 'var(--laza-cream)', borderBottom: '1px solid var(--laza-sand)' }}>
