@@ -42,62 +42,200 @@ const Index = () => {
   return (
     <div className="relative" style={{ backgroundColor: 'var(--laza-cream)', color: 'var(--laza-dark)', minHeight: '100vh' }}>
 
-      {/* Лоза левая — абсолютная, скроллится со страницей, огромная */}
-      <div className="hidden md:block absolute left-0 top-0 w-24 pointer-events-none" style={{ height: '100%', zIndex: 1 }}>
-        <svg width="96" height="100%" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', width: '96px', height: '100%' }}>
+      {/* Лоза левая */}
+      <div className="hidden md:block absolute left-0 top-0 w-28 pointer-events-none" style={{ height: '100%', zIndex: 1 }}>
+        <svg width="112" height="100%" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', width: '112px', height: '100%' }}>
           <defs>
-            <pattern id="vinePatL" x="0" y="0" width="96" height="300" patternUnits="userSpaceOnUse">
-              <path d="M48 0 Q28 40 48 80 Q68 120 48 160 Q28 200 48 240 Q68 280 48 300"
-                stroke="#7A9468" strokeWidth="3" fill="none" strokeLinecap="round"/>
-              <path d="M48 55 Q10 35 4 55 Q8 75 48 68 Z" fill="#A8B89A" opacity="0.55"/>
-              <path d="M48 155 Q86 135 92 155 Q88 175 48 168 Z" fill="#7A9468" opacity="0.5"/>
-              <path d="M48 100 Q80 80 88 92 Q84 108 62 104" stroke="#A8B89A" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-              <path d="M48 210 Q16 190 8 202 Q12 218 36 213" stroke="#A8B89A" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-              <path d="M48 250 Q18 232 12 250 Q16 268 48 262 Z" fill="#A8B89A" opacity="0.45"/>
-              <circle cx="12" cy="58" r="6" fill="#7A9468" opacity="0.35"/>
-              <circle cx="4" cy="68" r="5" fill="#7A9468" opacity="0.28"/>
-              <circle cx="18" cy="72" r="4.5" fill="#5a7a50" opacity="0.3"/>
-              <circle cx="88" cy="158" r="6" fill="#7A9468" opacity="0.35"/>
-              <circle cx="80" cy="168" r="5" fill="#5a7a50" opacity="0.28"/>
-              <circle cx="92" cy="172" r="4" fill="#7A9468" opacity="0.25"/>
+            <pattern id="vinePatL" x="0" y="0" width="112" height="400" patternUnits="userSpaceOnUse">
+              {/* Главный стебель */}
+              <path d="M70 0 Q50 50 65 100 Q80 150 60 200 Q40 250 65 300 Q80 350 60 400"
+                stroke="#6b8f5e" strokeWidth="3.5" fill="none" strokeLinecap="round"/>
+
+              {/* Усик 1 */}
+              <path d="M65 80 Q45 65 38 72 Q35 82 42 85 Q52 87 62 82"
+                stroke="#8aaa7a" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+
+              {/* Лист 1 — влево, резной виноградный */}
+              <g transform="translate(8, 90) rotate(-15)">
+                <path d="M30 0 Q20-8 4-4 Q-6 8 0 20 Q8 30 22 26 Q18 18 14 12 Q22 8 30 0Z" fill="#7a9e6a" opacity="0.7"/>
+                <path d="M30 0 Q38-6 50 0 Q56 12 48 22 Q38 28 28 24 Q32 16 36 10 Q34 4 30 0Z" fill="#6b8f5e" opacity="0.65"/>
+                <path d="M30 0 Q26 16 22 26" stroke="#5a7a50" strokeWidth="1" fill="none"/>
+                <path d="M30 0 Q34 14 36 22" stroke="#5a7a50" strokeWidth="1" fill="none"/>
+                <path d="M30 0 Q18 10 10 16" stroke="#5a7a50" strokeWidth="0.8" fill="none"/>
+                <path d="M30 0 Q40 8 46 16" stroke="#5a7a50" strokeWidth="0.8" fill="none"/>
+              </g>
+
+              {/* Усик 2 */}
+              <path d="M62 175 Q80 162 86 170 Q88 182 78 184 Q68 185 64 178"
+                stroke="#8aaa7a" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+
+              {/* Гроздь 1 — влево вниз */}
+              <g transform="translate(4, 110)">
+                <path d="M28 0 Q18 8 14 20" stroke="#8aaa7a" strokeWidth="1.5" fill="none"/>
+                <path d="M14 20 Q8 24 6 30 M14 20 Q18 26 16 32"
+                  stroke="#8aaa7a" strokeWidth="1.2" fill="none"/>
+                <circle cx="6" cy="33" r="6.5" fill="#7a5c8a" opacity="0.55"/>
+                <circle cx="17" cy="35" r="6.5" fill="#6b4d7a" opacity="0.5"/>
+                <circle cx="11" cy="43" r="6.5" fill="#7a5c8a" opacity="0.52"/>
+                <circle cx="4" cy="44" r="5.5" fill="#6b4d7a" opacity="0.45"/>
+                <circle cx="19" cy="45" r="5.5" fill="#7a5c8a" opacity="0.48"/>
+                <circle cx="11" cy="53" r="6" fill="#6b4d7a" opacity="0.5"/>
+                <circle cx="4" cy="53" r="5" fill="#7a5c8a" opacity="0.4"/>
+                <circle cx="19" cy="54" r="5" fill="#6b4d7a" opacity="0.42"/>
+                <circle cx="11" cy="62" r="5.5" fill="#7a5c8a" opacity="0.45"/>
+                <circle cx="5" cy="61" r="4.5" fill="#6b4d7a" opacity="0.38"/>
+                <circle cx="18" cy="62" r="4.5" fill="#7a5c8a" opacity="0.4"/>
+                <circle cx="11" cy="70" r="5" fill="#6b4d7a" opacity="0.42"/>
+                <circle cx="7" cy="69" r="4" fill="#7a5c8a" opacity="0.35"/>
+                <circle cx="16" cy="70" r="4" fill="#6b4d7a" opacity="0.38"/>
+              </g>
+
+              {/* Лист 2 — вправо */}
+              <g transform="translate(56, 195) rotate(10)">
+                <path d="M0 30 Q-8 18 -2 4 Q10-4 22 2 Q28 14 22 28 Q14 22 8 16 Q2 22 0 30Z" fill="#7a9e6a" opacity="0.65"/>
+                <path d="M0 30 Q8 20 18 14 Q30 10 36 18 Q36 30 26 36 Q14 38 6 32 Q4 30 0 30Z" fill="#6b8f5e" opacity="0.6"/>
+                <path d="M0 30 Q12 20 22 14" stroke="#5a7a50" strokeWidth="1" fill="none"/>
+                <path d="M0 30 Q6 18 8 8" stroke="#5a7a50" strokeWidth="0.8" fill="none"/>
+                <path d="M0 30 Q14 28 24 26" stroke="#5a7a50" strokeWidth="0.8" fill="none"/>
+              </g>
+
+              {/* Усик 3 */}
+              <path d="M63 270 Q44 258 38 266 Q36 278 46 280 Q56 281 62 273"
+                stroke="#8aaa7a" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+
+              {/* Лист 3 — большой влево */}
+              <g transform="translate(2, 280) rotate(-8)">
+                <path d="M36 0 Q22-10 4-4 Q-6 10 2 24 Q12 34 28 28 Q24 18 18 12 Q26 6 36 0Z" fill="#8aaa7a" opacity="0.6"/>
+                <path d="M36 0 Q46-8 60-2 Q68 12 58 26 Q46 32 34 26 Q38 16 42 10 Q40 4 36 0Z" fill="#7a9e6a" opacity="0.55"/>
+                <path d="M36 0 Q30 18 28 28" stroke="#5a7a50" strokeWidth="1" fill="none"/>
+                <path d="M36 0 Q40 16 40 24" stroke="#5a7a50" strokeWidth="1" fill="none"/>
+                <path d="M36 0 Q20 10 12 18" stroke="#5a7a50" strokeWidth="0.8" fill="none"/>
+                <path d="M36 0 Q48 8 54 18" stroke="#5a7a50" strokeWidth="0.8" fill="none"/>
+              </g>
+
+              {/* Гроздь 2 — вправо */}
+              <g transform="translate(62, 300)">
+                <path d="M0 0 Q10 8 14 20" stroke="#8aaa7a" strokeWidth="1.5" fill="none"/>
+                <path d="M14 20 Q8 26 7 33 M14 20 Q20 26 19 33"
+                  stroke="#8aaa7a" strokeWidth="1.2" fill="none"/>
+                <circle cx="6" cy="36" r="6" fill="#7a5c8a" opacity="0.5"/>
+                <circle cx="20" cy="36" r="6" fill="#6b4d7a" opacity="0.48"/>
+                <circle cx="13" cy="44" r="6.5" fill="#7a5c8a" opacity="0.52"/>
+                <circle cx="5" cy="45" r="5.5" fill="#6b4d7a" opacity="0.44"/>
+                <circle cx="21" cy="45" r="5.5" fill="#7a5c8a" opacity="0.46"/>
+                <circle cx="13" cy="54" r="6" fill="#6b4d7a" opacity="0.48"/>
+                <circle cx="6" cy="54" r="5" fill="#7a5c8a" opacity="0.4"/>
+                <circle cx="20" cy="54" r="5" fill="#6b4d7a" opacity="0.42"/>
+                <circle cx="13" cy="63" r="5.5" fill="#7a5c8a" opacity="0.44"/>
+                <circle cx="7" cy="62" r="4.5" fill="#6b4d7a" opacity="0.36"/>
+                <circle cx="19" cy="62" r="4.5" fill="#7a5c8a" opacity="0.38"/>
+                <circle cx="13" cy="71" r="5" fill="#6b4d7a" opacity="0.4"/>
+              </g>
             </pattern>
           </defs>
-          <rect width="96" height="100%" fill="url(#vinePatL)"/>
+          <rect width="112" height="100%" fill="url(#vinePatL)"/>
         </svg>
       </div>
 
-      {/* Лоза правая — абсолютная, скроллится со страницей, огромная */}
-      <div className="hidden md:block absolute right-0 top-0 w-24" style={{ height: '100%', zIndex: 1 }}>
-        <div className="pointer-events-none" style={{ height: 'calc(100% - 80px)' }}>
-          <svg width="96" height="100%" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', width: '96px', height: '100%' }}>
+      {/* Лоза правая */}
+      <div className="hidden md:block absolute right-0 top-0 w-28" style={{ height: '100%', zIndex: 1 }}>
+        <div className="pointer-events-none" style={{ height: 'calc(100% - 90px)' }}>
+          <svg width="112" height="100%" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', width: '112px', height: '100%' }}>
             <defs>
-              <pattern id="vinePatR" x="0" y="0" width="96" height="300" patternUnits="userSpaceOnUse">
-                <path d="M48 0 Q68 40 48 80 Q28 120 48 160 Q68 200 48 240 Q28 280 48 300"
-                  stroke="#7A9468" strokeWidth="3" fill="none" strokeLinecap="round"/>
-                <path d="M48 55 Q86 35 92 55 Q88 75 48 68 Z" fill="#A8B89A" opacity="0.55"/>
-                <path d="M48 155 Q10 135 4 155 Q8 175 48 168 Z" fill="#7A9468" opacity="0.5"/>
-                <path d="M48 100 Q16 80 8 92 Q12 108 34 104" stroke="#A8B89A" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-                <path d="M48 210 Q80 190 88 202 Q84 218 60 213" stroke="#A8B89A" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-                <path d="M48 250 Q78 232 84 250 Q80 268 48 262 Z" fill="#A8B89A" opacity="0.45"/>
-                <circle cx="84" cy="58" r="6" fill="#7A9468" opacity="0.35"/>
-                <circle cx="92" cy="68" r="5" fill="#7A9468" opacity="0.28"/>
-                <circle cx="78" cy="72" r="4.5" fill="#5a7a50" opacity="0.3"/>
-                <circle cx="8" cy="158" r="6" fill="#7A9468" opacity="0.35"/>
-                <circle cx="16" cy="168" r="5" fill="#5a7a50" opacity="0.28"/>
-                <circle cx="4" cy="172" r="4" fill="#7A9468" opacity="0.25"/>
+              <pattern id="vinePatR" x="0" y="0" width="112" height="400" patternUnits="userSpaceOnUse">
+                {/* Главный стебель */}
+                <path d="M42 0 Q62 50 47 100 Q32 150 52 200 Q72 250 47 300 Q32 350 52 400"
+                  stroke="#6b8f5e" strokeWidth="3.5" fill="none" strokeLinecap="round"/>
+
+                {/* Усик 1 */}
+                <path d="M47 80 Q67 65 74 72 Q77 82 70 85 Q60 87 50 82"
+                  stroke="#8aaa7a" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+
+                {/* Лист 1 — вправо */}
+                <g transform="translate(54, 88) rotate(15)">
+                  <path d="M0 0 Q-10-8 -26-4 Q-36 8 -30 20 Q-22 30 -8 26 Q-12 18 -16 12 Q-8 8 0 0Z" fill="#7a9e6a" opacity="0.7"/>
+                  <path d="M0 0 Q8-6 20 0 Q26 12 18 22 Q8 28 -2 24 Q2 16 6 10 Q4 4 0 0Z" fill="#6b8f5e" opacity="0.65"/>
+                  <path d="M0 0 Q-4 16 -8 26" stroke="#5a7a50" strokeWidth="1" fill="none"/>
+                  <path d="M0 0 Q4 14 6 22" stroke="#5a7a50" strokeWidth="1" fill="none"/>
+                  <path d="M0 0 Q-12 10 -20 16" stroke="#5a7a50" strokeWidth="0.8" fill="none"/>
+                  <path d="M0 0 Q10 8 16 16" stroke="#5a7a50" strokeWidth="0.8" fill="none"/>
+                </g>
+
+                {/* Гроздь 1 — вправо */}
+                <g transform="translate(68, 108)">
+                  <path d="M0 0 Q10 8 12 20" stroke="#8aaa7a" strokeWidth="1.5" fill="none"/>
+                  <path d="M12 20 Q6 26 5 33 M12 20 Q18 26 17 33"
+                    stroke="#8aaa7a" strokeWidth="1.2" fill="none"/>
+                  <circle cx="4" cy="36" r="6.5" fill="#7a5c8a" opacity="0.55"/>
+                  <circle cx="18" cy="36" r="6.5" fill="#6b4d7a" opacity="0.5"/>
+                  <circle cx="11" cy="44" r="6.5" fill="#7a5c8a" opacity="0.52"/>
+                  <circle cx="3" cy="45" r="5.5" fill="#6b4d7a" opacity="0.45"/>
+                  <circle cx="19" cy="45" r="5.5" fill="#7a5c8a" opacity="0.48"/>
+                  <circle cx="11" cy="53" r="6" fill="#6b4d7a" opacity="0.5"/>
+                  <circle cx="4" cy="54" r="5" fill="#7a5c8a" opacity="0.42"/>
+                  <circle cx="18" cy="54" r="5" fill="#6b4d7a" opacity="0.44"/>
+                  <circle cx="11" cy="62" r="5.5" fill="#7a5c8a" opacity="0.45"/>
+                  <circle cx="5" cy="62" r="4.5" fill="#6b4d7a" opacity="0.38"/>
+                  <circle cx="17" cy="62" r="4.5" fill="#7a5c8a" opacity="0.4"/>
+                  <circle cx="11" cy="70" r="5" fill="#6b4d7a" opacity="0.42"/>
+                </g>
+
+                {/* Усик 2 */}
+                <path d="M50 175 Q32 162 26 170 Q24 182 34 184 Q44 185 48 178"
+                  stroke="#8aaa7a" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+
+                {/* Лист 2 — влево */}
+                <g transform="translate(10, 192) rotate(-10)">
+                  <path d="M46 30 Q54 18 48 4 Q36-4 24 2 Q18 14 24 28 Q32 22 38 16 Q44 22 46 30Z" fill="#7a9e6a" opacity="0.65"/>
+                  <path d="M46 30 Q38 20 28 14 Q16 10 10 18 Q10 30 20 36 Q32 38 40 32 Q42 30 46 30Z" fill="#6b8f5e" opacity="0.6"/>
+                  <path d="M46 30 Q34 20 24 14" stroke="#5a7a50" strokeWidth="1" fill="none"/>
+                  <path d="M46 30 Q40 18 38 8" stroke="#5a7a50" strokeWidth="0.8" fill="none"/>
+                  <path d="M46 30 Q32 28 22 26" stroke="#5a7a50" strokeWidth="0.8" fill="none"/>
+                </g>
+
+                {/* Усик 3 */}
+                <path d="M49 270 Q68 258 74 266 Q76 278 66 280 Q56 281 50 273"
+                  stroke="#8aaa7a" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+
+                {/* Лист 3 — вправо большой */}
+                <g transform="translate(46, 278) rotate(8)">
+                  <path d="M0 0 Q-14-10 -32-4 Q-42 10 -34 24 Q-24 34 -8 28 Q-12 18 -18 12 Q-10 6 0 0Z" fill="#8aaa7a" opacity="0.6"/>
+                  <path d="M0 0 Q10-8 24-2 Q32 12 22 26 Q10 32 -2 26 Q2 16 6 10 Q4 4 0 0Z" fill="#7a9e6a" opacity="0.55"/>
+                  <path d="M0 0 Q-6 18 -8 28" stroke="#5a7a50" strokeWidth="1" fill="none"/>
+                  <path d="M0 0 Q4 16 4 24" stroke="#5a7a50" strokeWidth="1" fill="none"/>
+                  <path d="M0 0 Q-16 10 -24 18" stroke="#5a7a50" strokeWidth="0.8" fill="none"/>
+                  <path d="M0 0 Q12 8 18 18" stroke="#5a7a50" strokeWidth="0.8" fill="none"/>
+                </g>
+
+                {/* Гроздь 2 — влево */}
+                <g transform="translate(-4, 304)">
+                  <path d="M28 0 Q18 8 14 20" stroke="#8aaa7a" strokeWidth="1.5" fill="none"/>
+                  <path d="M14 20 Q8 26 7 33 M14 20 Q20 26 19 33"
+                    stroke="#8aaa7a" strokeWidth="1.2" fill="none"/>
+                  <circle cx="6" cy="36" r="6" fill="#7a5c8a" opacity="0.5"/>
+                  <circle cx="20" cy="36" r="6" fill="#6b4d7a" opacity="0.48"/>
+                  <circle cx="13" cy="44" r="6.5" fill="#7a5c8a" opacity="0.52"/>
+                  <circle cx="5" cy="45" r="5.5" fill="#6b4d7a" opacity="0.44"/>
+                  <circle cx="21" cy="45" r="5.5" fill="#7a5c8a" opacity="0.46"/>
+                  <circle cx="13" cy="54" r="6" fill="#6b4d7a" opacity="0.48"/>
+                  <circle cx="6" cy="54" r="5" fill="#7a5c8a" opacity="0.4"/>
+                  <circle cx="20" cy="54" r="5" fill="#6b4d7a" opacity="0.42"/>
+                  <circle cx="13" cy="63" r="5.5" fill="#7a5c8a" opacity="0.44"/>
+                  <circle cx="13" cy="71" r="5" fill="#6b4d7a" opacity="0.4"/>
+                </g>
               </pattern>
             </defs>
-            <rect width="96" height="100%" fill="url(#vinePatR)"/>
+            <rect width="112" height="100%" fill="url(#vinePatR)"/>
           </svg>
         </div>
-        {/* Виноград-кнопка в самом конце лозы */}
+        {/* Виноград-кнопка в конце */}
         <a
           href={VK_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center w-16 h-16 mx-auto transition-transform hover:scale-110"
+          className="flex items-center justify-center w-16 h-20 mx-auto transition-transform hover:scale-110"
           title="Сообщество ВКонтакте"
-          style={{ zIndex: 2, position: 'relative' }}
+          style={{ position: 'relative', zIndex: 2 }}
         >
           <img src={GRAPE_IMAGE} alt="Виноград" className="w-14 h-14 object-contain drop-shadow-md" />
         </a>
