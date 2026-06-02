@@ -40,33 +40,39 @@ const GRAPE_IMAGE = "https://cdn.poehali.dev/projects/9bf7c9ec-7d4c-49a6-bcc6-4a
 
 const Index = () => {
   return (
-    <div style={{ backgroundColor: 'var(--laza-cream)', color: 'var(--laza-dark)', minHeight: '100vh' }}>
+    <div className="relative" style={{ backgroundColor: 'var(--laza-cream)', color: 'var(--laza-dark)', minHeight: '100vh' }}>
 
-      {/* Vertical ЛАЗА strip */}
-      <div className="hidden md:flex fixed right-0 top-0 bottom-0 z-40 flex-col items-center justify-between py-6 w-10"
-        style={{ borderLeft: '1px solid var(--laza-sand)' }}>
-        <div />
-        <span
-          className="font-display font-light tracking-[0.35em] select-none"
-          style={{
-            color: 'var(--laza-terracotta)',
-            opacity: 0.35,
-            fontSize: '11px',
-            writingMode: 'vertical-rl',
-            letterSpacing: '0.35em',
-          }}
-        >
-          ЛАЗА
-        </span>
-        <a
-          href={VK_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="transition-transform hover:scale-110"
-          title="Сообщество ВКонтакте"
-        >
-          <img src={GRAPE_IMAGE} alt="Виноград" className="w-8 h-8 object-cover rounded-full" style={{ opacity: 0.7 }} />
-        </a>
+      {/* Vertical ЛАЗА vine — full page height, absolute inside scroll */}
+      <div className="hidden md:block absolute top-0 right-0 w-10 z-30" style={{ minHeight: '100%', borderLeft: '1px solid var(--laza-sand)' }}>
+        {/* Repeating ЛАЗА text that fills the full height */}
+        <div className="flex flex-col items-center pt-24 pb-16 gap-0" style={{ minHeight: '100%' }}>
+          <div
+            className="font-display font-light select-none flex-1"
+            style={{
+              color: 'var(--laza-terracotta)',
+              opacity: 0.28,
+              fontSize: '11px',
+              writingMode: 'vertical-rl',
+              letterSpacing: '0.5em',
+              lineHeight: 1,
+              overflow: 'hidden',
+              whiteSpace: 'nowrap',
+              backgroundImage: 'repeating-linear-gradient(to bottom, transparent 0px, transparent 0px)',
+            }}
+          >
+            {'ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · ЛАЗА · '}
+          </div>
+          {/* Grape at the bottom */}
+          <a
+            href={VK_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-transform hover:scale-125 mt-3"
+            title="Сообщество ВКонтакте"
+          >
+            <img src={GRAPE_IMAGE} alt="Виноград" className="w-7 h-7 object-cover rounded-full" style={{ opacity: 0.75 }} />
+          </a>
+        </div>
       </div>
 
       {/* Nav */}
