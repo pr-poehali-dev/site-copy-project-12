@@ -212,49 +212,47 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="flex flex-col divide-y" style={{ borderColor: 'var(--laza-sand)', border: '1px solid var(--laza-brown)', borderOpacity: 0.15, borderRadius: '1.5rem', overflow: 'hidden' }}>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((s, i) => (
-              <div
+              <a
                 key={i}
-                className="group flex flex-col md:flex-row md:items-start gap-4 md:gap-8 px-8 py-7 transition-colors"
-                style={{ backgroundColor: i % 2 === 0 ? 'var(--laza-cream)' : 'rgba(247,243,238,0.6)' }}
+                href={VK_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col gap-3 p-6 rounded-2xl transition-all hover:-translate-y-0.5 hover:shadow-md"
+                style={{ backgroundColor: 'var(--laza-cream)' }}
               >
-                <span className="font-display text-3xl font-light shrink-0 w-12" style={{ color: 'var(--laza-terracotta)', opacity: 0.5 }}>
-                  {s.num}
-                </span>
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-1">
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: 'var(--laza-sage)', color: 'var(--laza-cream)' }}>
-                      <Icon name={s.icon} size={15} fallback="Star" />
-                    </div>
-                    <h3 className="font-display text-xl md:text-2xl font-medium" style={{ color: 'var(--laza-dark)' }}>
-                      {s.title}
-                    </h3>
+                <div className="flex items-center justify-between">
+                  <span className="font-display text-xs font-light" style={{ color: 'var(--laza-terracotta)', opacity: 0.55 }}>
+                    {s.num}
+                  </span>
+                  <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--laza-sage)', color: 'var(--laza-cream)' }}>
+                    <Icon name={s.icon} size={13} fallback="Star" />
                   </div>
-                  <p className="font-body text-sm mt-2 ml-11" style={{ color: 'var(--laza-dark)', opacity: 0.62 }}>
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-medium leading-snug mb-1" style={{ color: 'var(--laza-dark)' }}>
+                    {s.title}
+                  </h3>
+                  <p className="font-body text-xs leading-relaxed" style={{ color: 'var(--laza-dark)', opacity: 0.58 }}>
                     {s.sub}
                   </p>
-                  {s.children && (
-                    <ul className="mt-4 ml-11 flex flex-col gap-2">
-                      {s.children.map((c, j) => (
-                        <li key={j} className="flex items-start gap-2">
-                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: 'var(--laza-sage-dark)' }} />
-                          <span className="font-body text-sm" style={{ color: 'var(--laza-dark)', opacity: 0.7 }}>{c}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
                 </div>
-                <a
-                  href={VK_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="shrink-0 self-start md:self-center font-body text-xs px-4 py-2 rounded-full border transition-all opacity-0 group-hover:opacity-100"
-                  style={{ borderColor: 'var(--laza-terracotta)', color: 'var(--laza-terracotta)' }}
-                >
-                  Записаться
-                </a>
-              </div>
+                {s.children && (
+                  <ul className="flex flex-col gap-1 mt-1 pt-3" style={{ borderTop: '1px solid var(--laza-sand)' }}>
+                    {s.children.map((c, j) => (
+                      <li key={j} className="flex items-start gap-1.5">
+                        <span className="mt-1.5 w-1 h-1 rounded-full shrink-0" style={{ backgroundColor: 'var(--laza-sage-dark)' }} />
+                        <span className="font-body text-xs" style={{ color: 'var(--laza-dark)', opacity: 0.65 }}>{c}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <div className="mt-auto pt-2 flex items-center gap-1 font-body text-xs opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: 'var(--laza-terracotta)' }}>
+                  <span>Записаться</span>
+                  <Icon name="ArrowRight" size={11} />
+                </div>
+              </a>
             ))}
           </div>
         </div>
